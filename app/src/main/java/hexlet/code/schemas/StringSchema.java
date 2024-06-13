@@ -1,5 +1,7 @@
 package hexlet.code.schemas;
 
+import java.util.Optional;
+
 import org.apache.commons.lang3.StringUtils;
 
 public class StringSchema extends BaseSchema<String> {
@@ -11,7 +13,7 @@ public class StringSchema extends BaseSchema<String> {
     }
 
     public StringSchema minLength(int minLength) {
-        predicates.put("minLength", str -> str.length() >= minLength);
+        predicates.put("minLength", str -> Optional.ofNullable(str).orElse("").length() >= minLength);
         return this;
     }
 
