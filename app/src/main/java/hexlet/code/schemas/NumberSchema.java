@@ -2,7 +2,7 @@ package hexlet.code.schemas;
 
 import java.util.Optional;
 
-public class NumberSchema extends BaseSchema<Integer> {
+public final class NumberSchema extends BaseSchema<Integer> {
     public NumberSchema required() {
         predicates.put("required", num -> Optional.ofNullable(num).orElse(0) != 0);
         return this;

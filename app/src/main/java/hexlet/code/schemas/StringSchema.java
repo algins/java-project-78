@@ -4,9 +4,7 @@ import java.util.Optional;
 
 import org.apache.commons.lang3.StringUtils;
 
-public class StringSchema extends BaseSchema<String> {
-
-
+public final class StringSchema extends BaseSchema<String> {
     public StringSchema required() {
         predicates.put("required", StringUtils::isNotEmpty);
         return this;
